@@ -5,8 +5,6 @@ import Sidebar from "./components/menu/SideBar.vue";
 import { useAuthenticationStore } from "./store/authStore";
 
 let store = storeToRefs(useAuthenticationStore());
-
-localStorage.setItem("store", JSON.stringify(store));
 </script>
 
 <template>
