@@ -1,0 +1,44 @@
+{
+  "name": "front",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force"
+  },
+  "dependencies": {
+    "@revolist/vue3-datagrid": "^4.0.0-next.1",
+    "aws-sdk": "^2.1579.0",
+    "bcrypt": "^5.1.1",
+    "hsy-vue-dialog": "^0.0.7",
+    "mock-aws-s3": "^4.0.2",
+    "nock": "^13.5.4",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-good-table": "^2.21.11",
+    "vue-infinite-scroll": "^2.0.2",
+    "vue-router": "^4.3.0",
+    "vue-toast-notification": "^3.1.2",
+    "vuex": "^4.0.2",
+    "vuex-persistedstate": "^4.1.0",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20.11.28",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/tsconfig": "^0.5.1",
+    "html-loader": "^5.0.0",
+    "npm-run-all2": "^6.1.2",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6",
+    "vue-tsc": "^2.0.6"
+  }
+}
