@@ -1,6 +1,12 @@
-Primeiro é necessário instalar o Postgres, e verificar no .env se as credenciais do Postgres estão corretas, principalmente a senha do banco e o ip que se direciona.
+Primeiro é necessário instalar o Postgres, e verificar no .env se as credenciais do Postgres estão corretas, principalmente a senha do banco e o ip que se direciona, principalmente em:
 
-Após isso de um npm install para instalar as dependências.
+PORT=3000
+POSTGRES_HOST=localhost
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=123456
+POSTGRES_PORT=5432
+
+Após isso entre via cli na pasta server e client/front e de um npm install para instalar as dependências.
 
 Após isso, crie dois terminais e rode o projeto com um "npm run dev", no client side é necessário entrar na pasta "front"
 
