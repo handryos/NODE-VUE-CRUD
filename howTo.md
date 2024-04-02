@@ -1,4 +1,4 @@
-Primeiro é necessário instalar o Postgres, e verificar no .env se as credenciais do Postgres estão corretas.
+Primeiro é necessário instalar o Postgres, e verificar no .env se as credenciais do Postgres estão corretas, principalmente a senha do banco e o ip que se direciona.
 
 Após isso de um npm install para instalar as dependências.
 

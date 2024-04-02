@@ -254,6 +254,17 @@ export default {
         };
         await VendasServices.save(data, this.router);
       } catch (error) {
+        if (error.message.includes("vendas_formaPagamentoId_fkey")) {
+          error.message =
+            "É necessário cadastrar uma forma de pagamento para completar uma venda";
+        }
+        if (error.message.includes("vendas_clienteId_fkey")) {
+          error.message =
+            "É necessário cadastrar um cliente para completar uma venda";
+        } else {
+          error.message =
+            "Erro ao salvar a venda! É necessário selecionar um cliente e um uma forma de pagamento para completar a venda! Caso não tenha ambos cadastrados, cadastre-os!";
+        }
         useToast().error(error.message);
         console.log(error);
       }
