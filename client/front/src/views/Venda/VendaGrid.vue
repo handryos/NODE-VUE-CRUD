@@ -21,7 +21,7 @@ export default {
         "Parcelas",
         "Total",
       ],
-      hrWidth: "6.8vw",
+      hrWidth: "7vw",
     };
   },
 };
