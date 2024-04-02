@@ -15,4 +15,6 @@ Para o server basta dar cd server e rodar o npm run dev
 
 Para os testes, recomendo que cadastre alguns dados tanto pelo postman quanto pelo front mesmo após rodar tudo, pois não foram mockados os dados.
 
+Para roda-los, basta entrar na pasta __tests__ e rodar um npm tests
+
 É esperado que do front seja rodada em uma máquina com resolução 1920 x 1080, pois não há suporte de responsividade para todos os sistemas.
