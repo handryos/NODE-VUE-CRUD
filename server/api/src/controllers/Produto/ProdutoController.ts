@@ -1,6 +1,4 @@
-import { NextFunction, Request, Response } from "express";
-import { Cliente } from "../../models/Cliente";
-import { ClienteRepo } from "../../repository/ClienteRepository/ClienteRepo";
+import { Request, Response } from "express";
 import { Produto } from "../../models/Produto";
 import { ProdutoRepo } from "../../repository/ProdutoRepo/ProdutoRepo";
 
@@ -17,7 +15,7 @@ class ProdutoController {
       res.status(200).json({
         status: "Sucesso!",
         message: "Produto Cadastrado com Sucesso!",
-        user: new_produto,
+        produto: new_produto,
       });
     } catch (err: any) {
       res.status(500).json({
@@ -40,6 +38,7 @@ class ProdutoController {
 
       res.status(200).json({
         status: "Sucesso!",
+        produto: produto,
       });
     } catch (err: any) {
       res.status(500).json({

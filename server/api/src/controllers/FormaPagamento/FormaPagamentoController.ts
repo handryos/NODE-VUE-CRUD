@@ -14,7 +14,7 @@ class FormaPagamentoController {
       res.status(200).json({
         status: "Sucesso!",
         message: "Forma de psagamento Cadastrado com Sucesso!",
-        user: new_formaPagamento,
+        formaPagamento: new_formaPagamento,
       });
     } catch (err: any) {
       res.status(500).json({
@@ -36,6 +36,7 @@ class FormaPagamentoController {
 
       res.status(200).json({
         status: "Sucesso!",
+        formaPagamento: formaPagamento,
       });
     } catch (err: any) {
       res.status(500).json({

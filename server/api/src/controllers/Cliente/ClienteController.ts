@@ -16,7 +16,7 @@ class ClienteController {
       res.status(200).json({
         status: "Sucesso!",
         message: "Cliente Cadastrado com Sucesso!",
-        user: new_cliente,
+        cliente: new_cliente,
       });
     } catch (err: any) {
       res.status(500).json({
@@ -41,6 +41,7 @@ class ClienteController {
 
       res.status(200).json({
         status: "Sucesso!",
+        cliente: cliente,
       });
     } catch (err: any) {
       res.status(500).json({

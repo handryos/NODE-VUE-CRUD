@@ -4,6 +4,7 @@ import cors from "cors";
 import Database from "./db";
 import AuthRoutes from "./router/AuthRouter";
 import AppRoutes from "./router/AppRouter";
+import { User } from "./models/User";
 
 class App {
   public app: Application;
@@ -24,6 +25,7 @@ class App {
   protected databaseSync(): void {
     const db = new Database();
     db.sequelize?.sync();
+    User.createFirstUser();
   }
 
   protected routes(): void {
@@ -35,7 +37,7 @@ class App {
   }
 }
 
-const app = new App().app;
+export const app = new App().app;
 
 const PORT: number = 8000;
 

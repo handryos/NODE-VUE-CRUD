@@ -1,6 +1,5 @@
-import { Model, Table, Column, DataType, BeforeCreate } from "sequelize-typescript";
-import bcrypt from 'bcrypt';
-
+import { Model, Table, Column, DataType } from "sequelize-typescript";
+import bcrypt from "bcrypt";
 
 @Table({
   tableName: User.USER_TABLE_NAME,
@@ -30,18 +29,26 @@ export class User extends Model {
   })
   password!: string;
 
-  public static hashPassword(user: User): Promise<void> {
+  public static async hashPassword(user: User): Promise<void> {
     const SALT_FACTOR = 8;
 
-    if (!user.changed('password')) {
-        return Promise.resolve();
+    if (!user.changed("password")) {
+      return Promise.resolve();
     }
 
     return bcrypt
-        .genSalt(SALT_FACTOR)
-        .then((salt: string) => bcrypt.hash(user.password, salt))
-        .then((hash: string) => {
-            user.setDataValue('password', hash);
-        });
-};
+      .genSalt(SALT_FACTOR)
+      .then((salt: string) => bcrypt.hash(user.password, salt))
+      .then((hash: string) => {
+        user.setDataValue("password", hash);
+      });
+  }
+
+  public static async createFirstUser(): Promise<User> {
+    const firstUser = new User();
+    firstUser.name = "user";
+    firstUser.password = "root";
+
+    return User.hashPassword(firstUser).then(() => firstUser.save());
+  }
 }

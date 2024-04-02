@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 interface IRouter {
-  routes(): void
+  routes(): void;
 }
 
 abstract class BaseRouier implements IRouter {

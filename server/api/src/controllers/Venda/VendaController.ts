@@ -10,11 +10,17 @@ class VendaController {
       const total = req.body.total;
       const cliente = req.body.clienteId;
 
-      await new VendaRepo().save(produtos, formaPagamentoId, total, cliente);
+      let venda = await new VendaRepo().save(
+        produtos,
+        formaPagamentoId,
+        total,
+        cliente
+      );
 
       res.status(200).json({
-        status: "Success!",
+        status: "Successo!",
         message: "Venda cadastrada!",
+        venda: venda,
       });
     } catch (err: any) {
       res.status(500).json({
@@ -49,7 +55,7 @@ class VendaController {
       const total = req.body.total;
       const cliente = req.body.clienteId;
 
-      await new VendaRepo().update(
+      let venda = await new VendaRepo().update(
         vendaId,
         produtos,
         formaPagamentoId,
@@ -60,6 +66,7 @@ class VendaController {
       res.status(200).json({
         status: "Success!",
         message: "Venda updated!",
+        venda: venda,
       });
     } catch (err: any) {
       res.status(500).json({

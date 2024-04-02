@@ -21,7 +21,7 @@ class Database {
     this.connectToPostgreSQL();
   }
 
-  private async connectToPostgreSQL() {
+  public async connectToPostgreSQL() {
     this.sequelize = new Sequelize({
       database: this.POSTGRES_DB,
       username: this.POSTGRES_USER,

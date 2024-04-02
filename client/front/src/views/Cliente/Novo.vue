@@ -131,7 +131,7 @@ export default defineComponent({
       <p v-if="state.nomeError" class="error">{{ state.nomeError }}</p>
 
       <input
-        type="text"
+        type="number"
         @input="state.cpfError = undefined"
         v-model="state.cpf"
         :style="{
@@ -170,7 +170,7 @@ export default defineComponent({
       </p>
 
       <input
-        type="text"
+        type="number"
         @input="state.enderecoNumeroError = undefined"
         v-model="state.endereco.numero"
         :style="{
@@ -234,7 +234,7 @@ export default defineComponent({
       </p>
 
       <input
-        type="text"
+        type="number"
         @input="state.enderecoCepError = undefined"
         v-model="state.endereco.cep"
         :style="{
